@@ -3,6 +3,8 @@ from config import connection_string
 
 def get_database(selected_site):
     site = ""
+    if selected_site == "Stores":
+        site = "stores"
     if selected_site == "Middlesbrough":
         site = "stores_middlesbrough"
     elif selected_site == "Billingham":
@@ -16,6 +18,8 @@ def get_database(selected_site):
 
 def get_main_db(selected_site):
     site = ""
+    if selected_site == "Stores":
+        site = "stores"
     if selected_site == "Middlesbrough":
         site = "stores_middlesbrough"
     elif selected_site == "Billingham":
@@ -27,6 +31,8 @@ def get_main_db(selected_site):
         dbname = client[site]
         # Select the relevant spares list depending on the site
         spares_list = ""
+        if selected_site == "Stores":
+            spares_list = "items"
         if selected_site == "Middlesbrough":
             spares_list = "spares_middlesbrough"
         elif selected_site == "Billingham":
